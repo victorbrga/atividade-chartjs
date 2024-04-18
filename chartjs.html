@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Implementando o ChartJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="display: flex;">
+    <div>
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+</body>
+
+<script>
+    //Conteúdo
+    const labels = [ //Const é tipo um var mas o valor não muda
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+
+    ];
+   
+
+    const data = {
+        labels: labels, //Declaração de variável 
+        datasets: [{ //Vetor e JSON(e métricas)
+            labels: 'Temperatura',
+            backgroundColor: 'rgb(255,99,132)',
+            borderColor: 'rgb(255,99,132)',
+            data: [30, 29, 28, 25, 22, 23],
+        }, {
+            labels: 'Umidade',
+            backgroundColor: 'rgb(255,99,132)',
+            borderColor: 'rgb(255,99,132)',
+            data: [80, 82, 80, 85, 80, 83],
+        }
+        ]
+     }
+
+        const labels2 = [ //Const é tipo um var mas o valor não muda
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+
+    ];
+   
+    
+    const data2 = {
+        labels: labels2, //Declaração de variável 
+        datasets: [{ //Vetor e JSON(e métricas)
+            labels: 'Temperatura',
+            backgroundColor: 'rgb(255,99,132)',
+            borderColor: 'rgb(255,99,132)',
+            data: [30, 29, 28, 25, 22, 23],
+        }, {
+            labels: 'Umidade',
+            backgroundColor: 'rgb(255,99,132)',
+            borderColor: 'rgb(255,99,132)',
+            data: [80, 82, 80, 85, 80, 83],
+        }
+        ]
+    };
+    //Sincronizar
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    ); 
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    ); 
+</script>
+
+</html>
